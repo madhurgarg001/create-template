@@ -1,0 +1,11 @@
+body{
+    font-family: "sans-serif";
+}
+.container{
+    margin: 20px;
+    /*border:1px solid #333;*/
+    padding:10px;
+}
+.search, .categoriesMenu{
+    display: inline-block;
+}
