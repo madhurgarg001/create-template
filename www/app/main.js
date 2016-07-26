@@ -3,6 +3,10 @@ define(function (require) {
     // with a relative require call,
     // like:
 
+    /*on requiring listCategories , it will first call define function
+    * which in turn will return an object which contains different
+    * methods that will be required to fetchData, filterData etc.
+    * */
     var listCategories = require('./list-categories');
     var filterCategories = require('./filter-categories');
     var singleProduct = require('./single-product');
@@ -12,12 +16,18 @@ define(function (require) {
     // full IDs, like:
     var $ = require('jquery');
 
+
+    /* getCategoryData, getFilteredData and getSingleData are acting as
+    * interfaces to get the data from API
+    * */
     $(document).ready(function () {
         //Fetching categories
 
         listCategories.getCategoryData(function (catObj) {
             console.log(catObj);
             template.renderCatTemplate(catObj);
+
+            //Filtering products on the basis of selected category
 
             $(".categoriesMenu>select").change(function(){
                 filterCategories.setCatObj(catObj);
@@ -28,7 +38,7 @@ define(function (require) {
             }).change();
         });
 
-        //Filtering products on the basis of selected category
+
 
 
 

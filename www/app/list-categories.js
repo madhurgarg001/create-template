@@ -1,5 +1,6 @@
 define([], function () {
     return {
+        //initializing data as NULL
         categoryData: null,
         _fetchData: function (CB) {
             console.log('Hello');
@@ -9,6 +10,7 @@ define([], function () {
             });
         },
 
+        //CB stands for callback
         getCategoryData : function (CB) {
             // console.log(this);
             var self = this;
@@ -18,7 +20,7 @@ define([], function () {
             } else{
 
                 this._fetchData(function(data) {
-                    /* self.categoriesData contains cache of the API call */
+                    /* self.categoryData contains cache of the API call */
                     self._transform(data, function (catObj) {
                         self.categoryData = catObj;
                         CB(self.categoryData);
@@ -29,6 +31,7 @@ define([], function () {
             }
         },
 
+        //mapping name to shortname
         _transform: function (data, CB) {
             var catObj = {};
             data.forEach(function (item) {
