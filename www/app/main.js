@@ -22,12 +22,11 @@ define(function (require) {
 
         //Filtering products on the basis of selected category
 
-        filterCategories.getFilteredData(listCategories, function (productsObj) {
+        filterCategories.getFilteredData(function (productsObj) {
             console.log(productsObj);
             template.renderProductsTemplate(productsObj);
         });
-        //Getting productId from Url
-        console.log(product.getIdFromUrl());
+
 
         //Getting single data
 

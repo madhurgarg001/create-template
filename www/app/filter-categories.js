@@ -7,8 +7,8 @@ define ([], function () {
                 CB(data);
             });
         },
-        getFilteredData: function (listCat, CB ) {
-            // console.log(listCat);
+        getFilteredData: function ( CB ) {
+
             // console.log(this);
             var self = this;
             if(this.filteredData){
