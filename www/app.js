@@ -8,12 +8,12 @@ requirejs.config({
     paths: {
         app: '../app',
         jquery: './jquery-3.1.0.min',
-        underscore: 'underscore-min'
+        underscore: './underscore-min'
     }
 });
 
 // Start loading the main app file. Put all of
 // your application logic in there.
-requirejs(['app/main', 'app/messages', 'app/list-categories', 'jquery']);
+requirejs(['app/main', 'app/messages', 'app/list-categories', 'jquery', 'underscore']);
 
 

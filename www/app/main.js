@@ -7,6 +7,7 @@ define(function (require) {
     var filterCategories = require('./filter-categories');
     var singleProduct = require('./single-product');
     var template = require('./_templates/_templates');
+    var product = require('./getUrlParams');
     // Load library/vendor modules using
     // full IDs, like:
     var $ = require('jquery');
@@ -16,14 +17,17 @@ define(function (require) {
 
         listCategories.getCategoryData(function (catObj) {
             console.log(catObj);
-
+            template.renderCatTemplate(catObj);
         });
 
         //Filtering products on the basis of selected category
 
-        filterCategories.getFilteredData(function (products) {
-            console.log(products)
+        filterCategories.getFilteredData(listCategories, function (productsObj) {
+            console.log(productsObj);
+            template.renderProductsTemplate(productsObj);
         });
+        //Getting productId from Url
+        console.log(product.getIdFromUrl());
 
         //Getting single data
 

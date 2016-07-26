@@ -7,7 +7,8 @@ define ([], function () {
                 CB(data);
             });
         },
-        getFilteredData: function ( CB ) {
+        getFilteredData: function (listCat, CB ) {
+            // console.log(listCat);
             // console.log(this);
             var self = this;
             if(this.filteredData){
@@ -24,19 +25,19 @@ define ([], function () {
             }
         },
         _filterData: function (dataObj, CB) {
-            var productsImages = []
+            var productsArray = [];
             dataObj.data.forEach(function ( data ) {
                 var size = (typeof data.cat !== 'undefined' ? data.cat.length:0);
                 for(var i=0; i<size; i+=1){
                     if('dresses#20' === data.cat[i]){
-                        productsImages.push(data.image);
+                        productsArray.push({img:data.image, id:data._id});
                     }
                 }
                 if('dresses#20' === 'uncategorised'){
-                    productsImages.push(data.image);
+                    productsArray.push({img:data.image, id:data._id});
                 }
             });
-            CB(productsImages);
+            CB(productsArray);
         }
 
     }
