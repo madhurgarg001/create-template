@@ -7,13 +7,17 @@ define ([], function () {
                 CB(data);
             });
         },
+        setCatObj: function(catObj) {
+            this.catObj = catObj;
+
+        },
+
         getFilteredData: function ( CB ) {
 
             // console.log(this);
             var self = this;
-            if(this.filteredData){
-                CB(this.filteredData);
-            } else{
+            // console.log(self);
+
                 this._fetchData(function ( dataObj ) {
 
                     // console.log(data);
@@ -22,21 +26,25 @@ define ([], function () {
                         CB(self.filteredData);
                     })
                 })
-            }
+
         },
         _filterData: function (dataObj, CB) {
             var productsArray = [];
+            var self = this;
+            // console.log(self);
             dataObj.data.forEach(function ( data ) {
+
                 var size = (typeof data.cat !== 'undefined' ? data.cat.length:0);
                 for(var i=0; i<size; i+=1){
-                    if('dresses#20' === data.cat[i]){
+                    if(self.catObj[$('.categoriesMenu>select').val()] === data.cat[i]){
                         productsArray.push({img:data.image, id:data._id});
                     }
                 }
-                if('dresses#20' === 'uncategorised'){
+                if(self.catObj[$('.categoriesMenu>select').val()] === 'uncategorised'){
                     productsArray.push({img:data.image, id:data._id});
                 }
             });
+            console.log(self.catObj[$('.categoriesMenu>select').val()]);
             CB(productsArray);
         }
 

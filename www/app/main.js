@@ -18,14 +18,18 @@ define(function (require) {
         listCategories.getCategoryData(function (catObj) {
             console.log(catObj);
             template.renderCatTemplate(catObj);
+
+            $(".categoriesMenu>select").change(function(){
+                filterCategories.setCatObj(catObj);
+                filterCategories.getFilteredData(function (productsObj) {
+                    console.log(productsObj);
+                    template.renderProductsTemplate(productsObj);
+                });
+            }).change();
         });
 
         //Filtering products on the basis of selected category
 
-        filterCategories.getFilteredData(function (productsObj) {
-            console.log(productsObj);
-            template.renderProductsTemplate(productsObj);
-        });
 
 
         //Getting single data
