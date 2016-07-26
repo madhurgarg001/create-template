@@ -1,14 +1,31 @@
 define ([], function () {
     return {
-        fetchData: function ( CB ) {
+         filteredData: null,
+        _fetchData: function ( CB ) {
             var url = 'https://api.myjson.com/bins/xinx';
             $.getJSON(url, function ( data ) {
-                return CB(data);
+                CB(data);
             });
         },
-        filterData: function ( dataArray ) {
+        getFilteredData: function ( CB ) {
+            // console.log(this);
+            var self = this;
+            if(this.filteredData){
+                CB(this.filteredData);
+            } else{
+                this._fetchData(function ( dataObj ) {
+
+                    // console.log(data);
+                    self._filterData(dataObj, function (products) {
+                        self.filteredData = products;
+                        CB(self.filteredData);
+                    })
+                })
+            }
+        },
+        _filterData: function (dataObj, CB) {
             var productsImages = []
-            dataArray.forEach(function ( data ) {
+            dataObj.data.forEach(function ( data ) {
                 var size = (typeof data.cat !== 'undefined' ? data.cat.length:0);
                 for(var i=0; i<size; i+=1){
                     if('dresses#20' === data.cat[i]){
@@ -19,7 +36,7 @@ define ([], function () {
                     productsImages.push(data.image);
                 }
             });
-            return productsImages;
+            CB(productsImages);
         }
 
     }

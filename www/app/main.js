@@ -4,32 +4,32 @@ define(function (require) {
     // like:
 
     var listCategories = require('./list-categories');
-
-    var filterCategories = require('./filter-categories')
-    var $ = require('jquery');
+    var filterCategories = require('./filter-categories');
+    var singleProduct = require('./single-product');
+    var template = require('./_templates/_templates');
     // Load library/vendor modules using
     // full IDs, like:
+    var $ = require('jquery');
 
     $(document).ready(function () {
         //Fetching categories
 
-        listCategories.getCategoryData(function (catArray) {
-            console.log(catArray)
+        listCategories.getCategoryData(function (catObj) {
+            console.log(catObj);
 
         });
 
-        // listCategories.fetchData(function( catArray ) {
-        //     var catObj = listCategories.transform(catArray);
-        //     console.log(catObj);
-        // });
-
         //Filtering products on the basis of selected category
-        filterCategories.fetchData(function ( dataArray ) {
-            console.log(dataArray.data);
-            var productsData = filterCategories.filterData(dataArray.data);
-            console.log(productsData.length);
-        })
 
+        filterCategories.getFilteredData(function (products) {
+            console.log(products)
+        });
+
+        //Getting single data
+
+        singleProduct.getSingleData((function (productInfo) {
+            console.log(productInfo);
+        }));
     });
 
 
