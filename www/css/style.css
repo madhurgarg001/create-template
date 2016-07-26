@@ -9,3 +9,6 @@ body{
 .search, .categoriesMenu{
     display: inline-block;
 }
+.prod{
+    margin-top:40px;
+}
