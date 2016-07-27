@@ -35,8 +35,10 @@
 
 <script type="text/template" id="productsTemplate">
     <% _.each(products, function(product){ %>
-
-    <a href="#id="><img src="<%= product %>"></a>
+    <div class="imgs">
+    <a href="#id="><img src="<%= product.img %>"></a>
+    <h5><%= product.name %></h5>
+    </div>
     <% }); %>
 </script>
 

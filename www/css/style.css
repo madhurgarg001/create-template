@@ -12,3 +12,7 @@ body{
 .prod{
     margin-top:40px;
 }
+.imgs{
+    display: inline-block;
+    text-align: center;
+}

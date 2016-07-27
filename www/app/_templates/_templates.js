@@ -11,15 +11,13 @@ define(['underscore'], function (_) {
             $('select').append(categoriesHTML);
         },
         renderProductsTemplate: function (productsObj) {
-            var productsImg =  productsObj.map(function (item) {
-                return item.img;
-            });
+
             var productsId = productsObj.map(function (item) {
                 return item.id;
             });
-
+            // console.log(productsObj);
             var productsTemplate = _.template($('#productsTemplate').html());
-            var productsHTML = productsTemplate({products: productsImg});
+            var productsHTML = productsTemplate({products: productsObj});
             // console.log(productsHTML);
             $('.prod').html(productsHTML);
             var i=0;
