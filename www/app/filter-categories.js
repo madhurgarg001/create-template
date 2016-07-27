@@ -2,7 +2,7 @@ define ([], function () {
     return {
          filteredData: null,
         _fetchData: function ( CB ) {
-            var url = 'https://api.myjson.com/bins/xinx';
+            var url = 'https://api.myjson.com/bins/2kdt3';
             $.getJSON(url, function ( data ) {
                 CB(data);
             });
@@ -37,16 +37,16 @@ define ([], function () {
                 var size = (typeof data.cat !== 'undefined' ? data.cat.length:0);
                 for(var i=0; i<size; i+=1){
                     if(self.catObj[$('.categoriesMenu>select').val()] === data.cat[i]){
-                        productsArray.push({img:data.image, id:data._id});
+                        productsArray.push({name:data.name,img:data.image, id:data._id});
                     }
                 }
                 if(self.catObj[$('.categoriesMenu>select').val()] === 'uncategorised'){
-                    productsArray.push({img:data.image, id:data._id});
+                    productsArray.push({name:data.name,img:data.image, id:data._id});
                 }
             });
             // console.log(self.catObj[$('.categoriesMenu>select').val()]);
             CB(productsArray);
-        }
+        },
 
     }
 });
