@@ -44,7 +44,7 @@ define ([], function () {
                     productsArray.push({img:data.image, id:data._id});
                 }
             });
-            console.log(self.catObj[$('.categoriesMenu>select').val()]);
+            // console.log(self.catObj[$('.categoriesMenu>select').val()]);
             CB(productsArray);
         }
 

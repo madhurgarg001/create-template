@@ -3,7 +3,7 @@ define([], function () {
         //initializing data as NULL
         categoryData: null,
         _fetchData: function (CB) {
-            console.log('Hello');
+            // console.log('Hello');
             var url = 'https://api.myjson.com/bins/4su3h';
             $.getJSON(url, function ( data ) {
                 CB(data);
@@ -15,7 +15,7 @@ define([], function () {
             // console.log(this);
             var self = this;
             if(this.categoryData){
-                console.log(this.categoryData);
+                // console.log(this.categoryData);
                 CB(this.categoryData);
             } else{
 

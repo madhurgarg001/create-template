@@ -24,7 +24,7 @@ define(function (require) {
         //Fetching categories
 
         listCategories.getCategoryData(function (catObj) {
-            console.log(catObj);
+            // console.log(catObj);
             template.renderCatTemplate(catObj);
 
             //Filtering products on the basis of selected category
@@ -32,21 +32,27 @@ define(function (require) {
             $(".categoriesMenu>select").change(function(){
                 filterCategories.setCatObj(catObj);
                 filterCategories.getFilteredData(function (productsObj) {
-                    console.log(productsObj);
+                    // console.log(productsObj);
                     template.renderProductsTemplate(productsObj);
                 });
             }).change();
         });
 
+        $('.prod').click(function () {
+            template.renderDetailedProductView();
+            setTimeout(function () {
+                console.log(product.getIdFromUrl());
+                //Getting single data
+
+                singleProduct.getSingleData(function (productInfo) {
+                    console.log(productInfo.data[0]);
+                    template.renderDetailedProductTemplate(productInfo);
+                });
+            },0);
 
 
+        });
 
-
-        //Getting single data
-
-        singleProduct.getSingleData((function (productInfo) {
-            console.log(productInfo);
-        }));
     });
 
 

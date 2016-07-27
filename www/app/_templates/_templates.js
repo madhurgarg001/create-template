@@ -28,6 +28,22 @@ define(['underscore'], function (_) {
                 this.href += productsId[i];
                 i+=1;
             })
+        },
+        renderDetailedProductView: function () {
+            console.log('template');
+            var detailedProductView =  _.template($('#detailedProductView').html());
+            var detailedProductViewHTML = detailedProductView({pagehead: 'Fancy Store'});
+            $('.container').html(detailedProductViewHTML);
+
+        },
+        renderDetailedProductTemplate: function (productInfo) {
+            var detailedProductTemplate  = _.template($('#detailedProductTemplate').html());
+            // var product = [];
+            // product.push(productInfo);
+            // console.log(product, productInfo.data[0]);
+            var detailedProductHTML = detailedProductTemplate({details:productInfo.data[0]});
+            console.log(detailedProductHTML);
+            $('.container').append(detailedProductHTML);
         }
 
     }
