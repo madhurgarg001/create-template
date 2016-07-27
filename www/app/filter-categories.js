@@ -2,7 +2,7 @@ define ([], function () {
     return {
          filteredData: null,
         _fetchData: function ( CB ) {
-            var url = 'https://api.myjson.com/bins/2kdt3';
+            var url = 'https://api.myjson.com/bins/2a3fr';
             $.getJSON(url, function ( data ) {
                 CB(data);
             });
