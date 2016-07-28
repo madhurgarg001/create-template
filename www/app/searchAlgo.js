@@ -17,11 +17,7 @@ define([], function () {
             var final = ranks.map(function (product) {
                 return product.data;
             });
-<<<<<<< HEAD
-            console.log(final);
-=======
-            // console.log(final);
->>>>>>> pavan
+
             CB(final);
         },
 
@@ -32,7 +28,6 @@ define([], function () {
             // console.log(words);
             var n = words.length;
 
-<<<<<<< HEAD
             if(val === item.name){
                 score = 4;
 
@@ -45,27 +40,10 @@ define([], function () {
                 }
                 score += 1;
             }
-            if(item.name.indexOf(val) > -1){
+            if(item.name.indexOf(val) > -1) {
                 score += 1;
             }
 
-=======
-                if(val === item.name){
-                    score = 4;
-
-                }
-                if(words[0].indexOf(val) === 0 || words[n-1].indexOf(val) === 0) {
-                        // console.log(item.name[n-1]);
-                    if(item.name.indexOf(val) === 0){
-                        score += 1;
-
-                    }
-                    score += 1;
-                }
-                if(item.name.indexOf(val) > -1) {
-                    score += 1;
-                }
->>>>>>> pavan
             return score;
         }
 
