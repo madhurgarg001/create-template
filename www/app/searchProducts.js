@@ -1,14 +1,17 @@
 define([], function () {
     return {
-        search: function (val, productsObj, CB) {
+        search: function (val, productsArray, CB) {
             // console.log(CB);
             // console.log("Fwefe");
-            var filteredArray = productsObj.filter(function(product) {
+            
+
+            var filteredArray = productsArray.filter(function(product) {
 
                 return product.name.indexOf(val) > -1;
             });
+
             // console.log(filteredArray);
-            // console.log(productsObj);
+            // console.log(productsArray);
             setTimeout(function () {
                 var final = [];
                 var fullmatch = false,
@@ -19,18 +22,18 @@ define([], function () {
                 for(var i=0; i<filteredArray.length; i+=1) {
 
                     var nameArray = (filteredArray[i].name).split(' ');
-                    var n = ((filteredArray[i].name).split(' ')).length;
+                    var n = nameArray.length;
 
                     if(val === filteredArray[i].name){
-                        console.log('fullmatch');
+                        // console.log('fullmatch');
                         final.push(filteredArray[i]);
                         fullmatch = true;
                         break;
 
                     } else if(nameArray[0].indexOf(val) === 0 || nameArray[n-1].indexOf(val) === 0) {
-                        console.log('firstWordmatch');
+                        // console.log('firstWordmatch');
                         if(filteredArray[i].name.indexOf(val) === 0){
-                            console.log('prefixmatch');
+                            // console.log('prefixmatch');
                             final.push(filteredArray[i]);
                             prefixMatch = true;
 
@@ -45,7 +48,7 @@ define([], function () {
                     CB(final);
                 }
                 else CB(filteredArray);
-            },100);
+            },0);
 
         }
     }

@@ -14,6 +14,6 @@ requirejs.config({
 
 // Start loading the main app file. Put all of
 // your application logic in there.
-requirejs(['app/main', 'app/messages', 'app/list-categories', 'jquery', 'underscore']);
+requirejs(['app/main', 'app/list-categories', 'jquery', 'underscore']);
 
 

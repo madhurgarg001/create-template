@@ -28,7 +28,7 @@
 <script type="text/template" id="categoriesTemplate">
     <% _.each(categories, function(category){ %>
 
-    <option value='<%= category %>' <% if(category == 'Uncategorised'){ print('selected'); } %>><%= category %></option>
+    <option value='<%= category %>' <% category == 'Uncategorised' ? "selected":""  %>><%= category %></option>
 
     <% }); %>
 </script>
