@@ -10,14 +10,14 @@ define(['underscore'], function (_) {
             var categoriesHTML = categoriesTemplate({categories: Object.keys(catObj)});
             $('select').append(categoriesHTML);
         },
-        renderProductsTemplate: function (productsObj) {
-
-            var productsId = productsObj.map(function (item) {
+        renderProductsTemplate: function (productsArray) {
+            console.log(productsArray);
+            var productsId = productsArray.map(function (item) {
                 return item.id;
             });
             // console.log(productsObj);
             var productsTemplate = _.template($('#productsTemplate').html());
-            var productsHTML = productsTemplate({products: productsObj});
+            var productsHTML = productsTemplate({products: productsArray});
             // console.log(productsHTML);
             $('.prod').html(productsHTML);
             var i=0;

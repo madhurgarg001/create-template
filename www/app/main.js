@@ -13,7 +13,6 @@ define(function (require) {
     var template = require('./_templates/_templates');
     var product = require('./getUrlParams');
     var searchObj = require('./searchAlgo');
-    // Load library/vendor modules using
     // full IDs, like:
     var $ = require('jquery');
 
@@ -32,14 +31,14 @@ define(function (require) {
 
             $(".categoriesMenu>select").change(function(){
                 filterCategories.setCatObj(catObj);
-                filterCategories.getFilteredData(function (productsObj) {
-                    // console.log(productsObj);
-                    template.renderProductsTemplate(productsObj);
+                filterCategories.getFilteredData(function (productsArray) {
+                    // console.log(productsArray);
+                    template.renderProductsTemplate(productsArray);
                     $('.search>input').focus(function () {
                        $(this).keyup(function () {
                            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-                            searchObj.search(val, productsObj, function (searchedProducts) {
-                                console.log(searchedProducts);
+                            searchObj.search(val, productsArray, function (searchedProducts) {
+                                // console.log(searchedProducts);
                                 template.renderProductsTemplate(searchedProducts);
                             });
 
