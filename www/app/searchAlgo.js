@@ -16,7 +16,7 @@ define([], function () {
             });
             var final = ranks.map(function (product) {
                 return product.data;
-            })
+            });
             // console.log(final);
             CB(final);
         },
