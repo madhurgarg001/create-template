@@ -12,7 +12,7 @@ define(function (require) {
     var singleProduct = require('./single-product');
     var template = require('./_templates/_templates');
     var product = require('./getUrlParams');
-    var searchObj = require('./searchProducts')
+    var searchObj = require('./searchAlgo');
     // Load library/vendor modules using
     // full IDs, like:
     var $ = require('jquery');
