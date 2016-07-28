@@ -39,6 +39,7 @@ define(function (require) {
                        $(this).keyup(function () {
                            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
                             searchObj.search(val, productsObj, function (searchedProducts) {
+                                console.log(searchedProducts);
                                 template.renderProductsTemplate(searchedProducts);
                             });
 
@@ -50,6 +51,7 @@ define(function (require) {
 
         $('.prod').click(function () {
             template.renderDetailedProductView();
+            //
             setTimeout(function () {
                 console.log(product.getIdFromUrl());
                 //Getting single data
