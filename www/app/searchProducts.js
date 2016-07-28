@@ -27,15 +27,18 @@ define([], function () {
                         fullmatch = true;
                         break;
 
-                    } else if(filteredArray[i].name.indexOf(val) === 0){
-                        console.log('prefixmatch');
-                        final.push(filteredArray[i]);
-                        prefixMatch = true;
-
                     } else if(nameArray[0].indexOf(val) === 0 || nameArray[n-1].indexOf(val) === 0) {
                         console.log('firstWordmatch');
-                        final.push(filteredArray[i]);
-                        firstWordMatch = true;
+                        if(filteredArray[i].name.indexOf(val) === 0){
+                            console.log('prefixmatch');
+                            final.push(filteredArray[i]);
+                            prefixMatch = true;
+
+                        } else{
+                            final.push(filteredArray[i]);
+                            firstWordMatch = true;
+                        }
+
                     }
                 }
                 if(fullmatch || prefixMatch || firstWordMatch){
