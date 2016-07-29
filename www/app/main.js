@@ -12,10 +12,9 @@ define(function (require) {
     var singleProduct = require('./single-product');
     var template = require('./_templates/_templates');
     var product = require('./getUrlParams');
-<<<<<<< HEAD
-=======
+
     // Load library/vendor modules using
->>>>>>> pavan
+
     var searchObj = require('./searchAlgo');
     // full IDs, like:
     var $ = require('jquery');
