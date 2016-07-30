@@ -11,15 +11,9 @@ define(function (require) {
     var listCategories = require('./list-categories');
     var filterCategories = require('./filter-categories');
     var singleProduct = require('./single-product');
-<<<<<<< HEAD
-    var template = require('./_templates/_templates');
-    var product = require('./getUrlParams');
-=======
     var catView = require('./views/CatgoryView');
     var productsView = require('./views/ProductsView');
     var singleProductView = require('./views/singleProductView');
-    // var product = require('./getUrlParams');
->>>>>>> development
     var searchObj = require('./searchAlgo');
     // Load library/vendor modules using
     // full IDs, like:
@@ -56,16 +50,6 @@ define(function (require) {
         });
 
         $('.prods').click(function () {
-<<<<<<< HEAD
-            console.log('clicked');
-            template.renderDetailedProductView();
-            //
-            setTimeout(function () {
-                console.log(product.getIdFromUrl());
-=======
-                // console.log(product.getIdFromUrl());
->>>>>>> development
-                //Getting single data
 
                 singleProduct.getSingleData(function (productInfo) {
                     new singleProductView.SingleProductView({el:$('.page-content'), product:productInfo.data[0]});
