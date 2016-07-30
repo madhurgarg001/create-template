@@ -8,9 +8,9 @@ define(['backbone'], function (Backbone) {
 
             initialize: function (options) {
                 this.options = options;
-                _.bindAll(this, 'render', 'attachID');
+                // _.bindAll(this, 'render', 'attachID');
                 this.render();
-                this.attachID();
+                // this.attachID();
             },
 
             render: function () {
@@ -18,17 +18,6 @@ define(['backbone'], function (Backbone) {
                 var templateHTML = this.template({products:data});
                 this.$el.html(templateHTML);
 
-            },
-            attachID:function () {
-                var productsId = this.options.products.map(function (item) {
-                    return item.id;
-                });
-                var i=0;
-                $('.prod a').each(function(){
-
-                    this.href += productsId[i];
-                    i+=1;
-                })
             }
         });
 

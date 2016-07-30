@@ -20,7 +20,7 @@ div{
     flex-wrap: wrap;
     padding: 20px;
 }
-.float{
+.pull-left{
     float: left;
 }
 .imgs{
@@ -32,10 +32,10 @@ div{
     height: 40px;
     width: 15em;
     opacity: 0.8;
-    background: url(../images/search.png) 96% / 10% no-repeat transparent;
+    background: url(../images/search-icon.png) 96% / 10% no-repeat transparent;
 }
 
-select{
+.categoriesDropdown{
 
     padding-left:15px;
     font-size: 15px;
@@ -47,7 +47,7 @@ select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: url(../images/android-icon-36x36.png) 96% / 15% no-repeat transparent;
+    background: url(../images/caret-icon.png) 96% / 15% no-repeat transparent;
     height:40px;
     top:79px;
     right:0;

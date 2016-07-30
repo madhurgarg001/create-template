@@ -19,7 +19,7 @@
                 <input type="search" placeholder="Search..." id="search">
             </div>
             <div class="categoriesMenu">
-                <select></select>
+                <select class="categoriesDropdown"></select>
             </div>
         </div>
 
@@ -44,7 +44,7 @@
     <% _.each(products, function(product){ %>
     <div class="prod ">
         <div class="imgs">
-            <a href="#id="><img src="<%= product.img %>"></a>
+            <a href="#id=<%= product.id %>" ><img src="<%= product.img %>"></a>
             <h5><%= product.name %></h5>
         </div>
     </div>

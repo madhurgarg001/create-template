@@ -1,4 +1,4 @@
-define(function (require) {
+define([function (require) {
     // Load any app-specific modules
     // with a relative require call,
     // like:
@@ -14,7 +14,6 @@ define(function (require) {
     var catView = require('./views/CatgoryView');
     var productsView = require('./views/ProductsView');
     var singleProductView = require('./views/singleProductView');
-    // var product = require('./getUrlParams');
     var searchObj = require('./searchAlgo');
     // Load library/vendor modules using
     // full IDs, like:
