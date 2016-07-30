@@ -32,7 +32,9 @@ div{
     height: 40px;
     width: 15em;
     opacity: 0.8;
+
     background: url(../images/search-icon.png) 96% / 10% no-repeat transparent;
+
 }
 
 .categoriesDropdown{
@@ -70,10 +72,11 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 @media screen and (min-width: 535px) {
-    .inputs{
-        display: flex;
-        justify-content: space-between;
-    }
+
+.inputs{
+    display: flex;
+    justify-content: space-between;
+
 }
 @media screen and (max-width: 534px){
     .inputs{
