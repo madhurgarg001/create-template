@@ -50,8 +50,6 @@ define([function (require) {
         });
 
         $('.prods').click(function () {
-                // console.log(product.getIdFromUrl());
-                //Getting single data
 
                 singleProduct.getSingleData(function (productInfo) {
                     new singleProductView.SingleProductView({el:$('.page-content'), product:productInfo.data[0]});
