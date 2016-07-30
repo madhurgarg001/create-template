@@ -18,7 +18,7 @@ define(function (require) {
     var searchObj = require('./searchAlgo');
     // Load library/vendor modules using
     // full IDs, like:
-    var $ = require('jquery');
+
 
     /* getCategoryData, getFilteredData and getSingleData are acting as
     * interfaces to get the data from API
@@ -51,16 +51,12 @@ define(function (require) {
         });
 
         $('.prods').click(function () {
-            //
-            setTimeout(function () {
                 // console.log(product.getIdFromUrl());
                 //Getting single data
 
                 singleProduct.getSingleData(function (productInfo) {
                     new singleProductView.SingleProductView({el:$('.page-content'), product:productInfo.data[0]});
                 });
-            },0);
-
 
         });
 
