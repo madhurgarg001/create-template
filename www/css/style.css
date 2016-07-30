@@ -1,5 +1,5 @@
 body{
-    font-family: "Arial";
+    font-family: sans-serif;
 }
 
 div{
@@ -48,7 +48,7 @@ div{
     border: 1px solid #ccc;
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
+
     background: url(../images/caret-icon.png) 96% / 15% no-repeat transparent;
     height:40px;
     top:79px;
@@ -78,8 +78,8 @@ h1,h2,h3,h4,h5,h6,p{
     justify-content: space-between;
 
 }
-@media screen and (max-width: 534px){
-    .inputs{
+@media screen and (max-width: 534px) {
+    .inputs {
         display: flex;
         /*justify-content: space-between;*/
         align-items: center;
