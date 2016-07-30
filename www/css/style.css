@@ -32,7 +32,7 @@ div{
     height: 40px;
     width: 15em;
     opacity: 0.8;
-    background: url(../images/favicon-16x16.png) 96% / 10% no-repeat transparent;
+    background: url(../images/search.png) 96% / 10% no-repeat transparent;
 }
 
 select{

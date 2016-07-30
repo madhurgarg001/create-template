@@ -11,14 +11,14 @@ define(function (require) {
     var listCategories = require('./list-categories');
     var filterCategories = require('./filter-categories');
     var singleProduct = require('./single-product');
-    var template = require('./views/productView');
-    var product = require('./getUrlParams');
+    var catView = require('./views/CatgoryView');
+    var productsView = require('./views/ProductsView');
+    var singleProductView = require('./views/singleProductView');
+    // var product = require('./getUrlParams');
     var searchObj = require('./searchAlgo');
     // Load library/vendor modules using
-
     // full IDs, like:
     var $ = require('jquery');
-
 
     /* getCategoryData, getFilteredData and getSingleData are acting as
     * interfaces to get the data from API
@@ -26,23 +26,22 @@ define(function (require) {
     $(document).ready(function () {
         //Fetching categories
 
-        listCategories.getCategoryData(function (catObj) {
-            // console.log(catObj);
-            template.renderCatTemplate(catObj);
 
+        listCategories.getCategoryData(function (catObj) {
+            new catView.CategoryView({el:$('.categoriesMenu select'), catObj:Object.keys(catObj)});
             //Filtering products on the basis of selected category
 
             $(".categoriesMenu>select").change(function(){
                 filterCategories.setCatObj(catObj);
                 filterCategories.getFilteredData(function (productsArray) {
-                    // console.log(productsArray);
-                    template.renderProductsTemplate(productsArray);
+
+                    new productsView.ProductsView({el:$('.prods'), products:productsArray});
                     $('.search>input').focus(function () {
                        $(this).keyup(function () {
                            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
                             searchObj.search(val, productsArray, function (searchedProducts) {
-                                // console.log(searchedProducts);
-                                template.renderProductsTemplate(searchedProducts);
+
+                                new productsView.ProductsView({el:$('.prods'), products:searchedProducts});
                             });
 
                        }).keypress();
@@ -51,16 +50,14 @@ define(function (require) {
             }).change();
         });
 
-        $('.prod').click(function () {
-            template.renderDetailedProductView();
+        $('.prods').click(function () {
             //
             setTimeout(function () {
-                console.log(product.getIdFromUrl());
+                // console.log(product.getIdFromUrl());
                 //Getting single data
 
                 singleProduct.getSingleData(function (productInfo) {
-                    console.log(productInfo.data[0]);
-                    template.renderDetailedProductTemplate(productInfo);
+                    new singleProductView.SingleProductView({el:$('.page-content'), product:productInfo.data[0]});
                 });
             },0);
 
