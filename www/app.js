@@ -15,10 +15,7 @@ requirejs.config({
 
 // Start loading the main app file. Put all of
 // your application logic in there.
-<<<<<<< HEAD
+
 requirejs(['app/main', 'app/list-categories', 'jquery', 'underscore', 'backbone']);
-=======
-requirejs(['app/main',  'jquery', 'underscore', 'backbone']);
->>>>>>> development
 
 
