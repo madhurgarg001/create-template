@@ -3,10 +3,11 @@ define(function (require) {
     // with a relative require call,
     // like:
 
-    /*on requiring listCategories , it will first call define function
+    /*
+    *on requiring listCategories , it will first call define function
     * which in turn will return an object which contains different
     * methods that will be required to fetchData, filterData etc.
-    * */
+    */
     var listCategories = require('./list-categories');
     var filterCategories = require('./filter-categories');
     var singleProduct = require('./single-product');
