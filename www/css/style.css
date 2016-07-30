@@ -32,7 +32,8 @@ div{
     height: 40px;
     width: 15em;
     opacity: 0.8;
-    background: url(../images/favicon-16x16.png) 96% / 10% no-repeat transparent;
+    background: url(../images/search.png) 96% / 10% no-repeat transparent;
+
 }
 
 select{
@@ -70,10 +71,11 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 @media screen and (min-width: 535px) {
+
 .inputs{
     display: flex;
     justify-content: space-between;
-}
+
 }
 @media screen and (max-width: 534px){
     .inputs{
