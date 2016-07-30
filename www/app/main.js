@@ -11,10 +11,11 @@ define(function (require) {
     var listCategories = require('./list-categories');
     var filterCategories = require('./filter-categories');
     var singleProduct = require('./single-product');
-    var template = require('./_templates/_templates');
+    var template = require('./views/productView');
     var product = require('./getUrlParams');
-    // Load library/vendor modules using
     var searchObj = require('./searchAlgo');
+    // Load library/vendor modules using
+
     // full IDs, like:
     var $ = require('jquery');
 

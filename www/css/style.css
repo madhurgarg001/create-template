@@ -1,18 +1,85 @@
 body{
-    font-family: "Helvetica";
+    font-family: "Arial";
+}
+
+div{
+    /*border:1px solid #e8e0e0;*/
+    box-sizing: border-box;
 }
 .container{
     margin: 20px;
     /*border:1px solid #333;*/
-    padding:10px;
+    padding-left:40px;
+    padding-top: 20px;
+    padding-right: 40px;
+
 }
-.search, .categoriesMenu{
-    display: inline-block;
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
 }
-.prod{
-    margin-top:40px;
+.float{
+    float: left;
 }
 .imgs{
-    display: inline-block;
     text-align: center;
+}
+.search>input {
+    padding-left:15px;
+    font-size: 15px;
+    height: 40px;
+    width: 15em;
+    opacity: 0.8;
+    background: url(../images/favicon-16x16.png) 96% / 10% no-repeat transparent;
+}
+
+select{
+
+    padding-left:15px;
+    font-size: 15px;
+    text-align: center;
+    width: 15em;
+    color: #333;
+    opacity: 0.9;
+    border: 1px solid #ccc;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../images/android-icon-36x36.png) 96% / 15% no-repeat transparent;
+    height:40px;
+    top:79px;
+    right:0;
+
+}
+.categoriesMenu{
+
+    text-align: center;
+    opacity: 0.6;
+}
+h1,h2,h3,h4,h5,h6,p{
+    opacity:0.8;
+}
+.header h4{
+    font-size: 20px;
+}
+.prod{
+    flex-grow: 1;
+    margin: 21px;
+}
+
+@media screen and (min-width: 535px) {
+    .inputs{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 534px){
+    .inputs{
+        display: flex;
+        /*justify-content: space-between;*/
+        align-items: center;
+        flex-direction: column;
+    }
 }
