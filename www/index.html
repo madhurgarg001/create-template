@@ -6,22 +6,28 @@
 
 </head>
 <body>
+
 <div class="wrapper">
     <div class="container">
+
         <div class="header">
             <h4>Fancy Store</h4>
         </div>
+        <div class="inputs">
         <div class="search">
             <input type="search" placeholder="Search..." id="search">
         </div>
         <div class="categoriesMenu">
-            <select></select>
+            <select><span class="fa fa-carrot"></span></select>
         </div>
-        <div class="prods">
-            <div class="prod">
+        </div>
 
-            </div>
+        <div class="prods flex">
+
+
+
         </div>
+
     </div>
 </div>
 
@@ -35,9 +41,11 @@
 
 <script type="text/template" id="productsTemplate">
     <% _.each(products, function(product){ %>
+    <div class="prod ">
     <div class="imgs">
     <a href="#id="><img src="<%= product.img %>"></a>
     <h5><%= product.name %></h5>
+    </div>
     </div>
     <% }); %>
 </script>

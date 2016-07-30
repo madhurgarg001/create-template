@@ -12,11 +12,8 @@ define(function (require) {
     var singleProduct = require('./single-product');
     var template = require('./_templates/_templates');
     var product = require('./getUrlParams');
-<<<<<<< HEAD
-=======
-    // Load library/vendor modules using
->>>>>>> pavan
     var searchObj = require('./searchAlgo');
+    // Load library/vendor modules using
     // full IDs, like:
     var $ = require('jquery');
 
@@ -52,7 +49,8 @@ define(function (require) {
             }).change();
         });
 
-        $('.prod').click(function () {
+        $('.prods').click(function () {
+            console.log('clicked');
             template.renderDetailedProductView();
             //
             setTimeout(function () {
