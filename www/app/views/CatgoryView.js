@@ -4,22 +4,21 @@ define(['backbone'], function (Backbone) {
     (function () {
 
             app.CategoryView = Backbone.View.extend({
+                template: _.template($("#categoriesTemplate").html()),
 
-            template: _.template($("#categoriesTemplate").html()),
-
-            initialize: function (options) {
+                initialize: function (options) {
                 this.options = options;
                 _.bindAll(this, 'render');
                 this.render();
-            },
+                },
 
-            render: function () {
+                render: function () {
                 var data = this.options.catObj;
                 var templateHTML = this.template({categories:data});
                 this.$el.html(templateHTML);
 
-            }
-        });
+                }
+            });
 
 
 
