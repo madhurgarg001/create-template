@@ -10,11 +10,9 @@ define(function (require) {
      */
     var listCategories = require('./list-categories');
     var filterCategories = require('./filter-categories');
-    var singleProduct = require('./single-product');
-    var catView = require('./views/CatgoryView');
-    var productsView = require('./views/ProductsView');
-    var singleProductView = require('./views/singleProductView');
     var searchObj = require('./searchAlgo');
+    var $ = require('jquery');
+    var mn = require('../marionette/mn');
     // Load library/vendor modules using
     // full IDs, like:
 
@@ -25,36 +23,28 @@ define(function (require) {
     $(document).ready(function () {
         //Fetching categories
 
-
+        var app = mn.start();
         listCategories.getCategoryData(function (catObj) {
-            new catView.CategoryView({el:$('.categoriesMenu select'), catObj:Object.keys(catObj)});
+                console.log(app);
             //Filtering products on the basis of selected category
 
             $(".categoriesMenu>select").change(function(){
                 filterCategories.setCatObj(catObj);
                 filterCategories.getFilteredData(function (productsArray) {
-
-                    new productsView.ProductsView({el:$('.prods'), products:productsArray});
+                    console.log(productsArray)
+                    // mn.start(productsArray);
                     $('.search>input').focus(function () {
                         $(this).keyup(function () {
                             var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
                             searchObj.search(val, productsArray, function (searchedProducts) {
 
-                                new productsView.ProductsView({el:$('.prods'), products:searchedProducts});
+                                mn.start(searchedProducts);
                             });
 
                         }).keypress();
                     })
                 });
             }).change();
-        });
-
-        $('.prods').click(function () {
-
-            singleProduct.getSingleData(function (productInfo) {
-                new singleProductView.SingleProductView({el:$('.page-content'), product:productInfo.data[0]});
-            });
-
         });
 
     });
