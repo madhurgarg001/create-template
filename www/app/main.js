@@ -29,7 +29,7 @@ define(function (require) {
         listCategories.getCategoryData(function (catObj) {
             new catView.CategoryView({el:$('.categoriesMenu select'), catObj:Object.keys(catObj)});
             //Filtering products on the basis of selected category
-
+			console.log(catObj);
             $(".categoriesMenu>select").change(function(){
                 filterCategories.setCatObj(catObj);
                 filterCategories.getFilteredData(function (productsArray) {
