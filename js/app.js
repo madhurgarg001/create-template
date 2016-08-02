@@ -19,7 +19,7 @@ define([
 
     var inputsLayout = new InputsLayout();
 
-    var contentsLayout = new ContentLayout();
+    app.contentsLayout = new ContentLayout();
 
     app.detailProductLayout = new DetailProductLayout();
 
@@ -50,8 +50,10 @@ define([
         }
     ]);
 
-    app.details = new DetailProductCollection({},{});
-    var productsView = new ProductsView({
+    app.details = new DetailProductCollection([{
+        "image": "http://cdn6.bigcommerce.com/s-fht6d3vy/products/76/images/262/TAPRODAPPDR001__84722__31432.1450885249.195.234.jpg?c=2"
+    }]);
+    app.productsView = new ProductsView({
         collection: products
     });
 
@@ -67,8 +69,8 @@ define([
         app.inputs.show(inputsLayout);
         inputsLayout.searchRegion.show(searchBar);
         inputsLayout.DropDownRegion.show(categoriesView);
-        app.content.show(contentsLayout);
-        contentsLayout.productsRegion.show(productsView);
+        app.content.show(app.contentsLayout);
+        app.contentsLayout.productsRegion.show(app.productsView);
 
     });
 
