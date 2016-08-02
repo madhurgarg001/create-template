@@ -21,7 +21,7 @@ define([
 
     var contentsLayout = new ContentLayout();
 
-    var detailProductLayout = new DetailProductLayout();
+    app.detailProductLayout = new DetailProductLayout();
 
     var searchBar = new SearchBar();
 
@@ -50,17 +50,17 @@ define([
         }
     ]);
 
-    var details = new DetailProductCollection({},{});
+    app.details = new DetailProductCollection({},{});
     var productsView = new ProductsView({
         collection: products
     });
 
-    var detailProductView = new DetailProductView({
-        collection: details
+    app.detailProductView = new DetailProductView({
+        collection: app.details
     });
     app.addRegions({
         inputs: '#inputs',
-        content: '#content',
+        content: '#content'
     });
 
     app.addInitializer(function () {

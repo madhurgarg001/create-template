@@ -11,8 +11,9 @@ define([
             'click a': 'changeView'
         },
         changeView: function () {
-            console.log('clicked the image');
-
+           var app = window.app;
+            app.content.show(app.detailProductLayout);
+            app.detailProductLayout.DetailProductRegion.show(app.detailProductView);
         }
     });
 });
